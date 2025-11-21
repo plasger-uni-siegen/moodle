@@ -355,6 +355,10 @@ body.path-question-type {
     }
 }
 
+.que span.comment {
+    padding: 0;
+}   
+
 .que .formulation {
     color: shift-color($info, $alert-color-scale + 40%);
     border-color: shift-color($info, $alert-border-scale);
