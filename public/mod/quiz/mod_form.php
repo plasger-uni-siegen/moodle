@@ -218,9 +218,6 @@ class mod_quiz_mod_form extends moodleform_mod {
         $mform->addElement('selectyesno', 'attemptonlast',
                 get_string('eachattemptbuildsonthelast', 'quiz'));
         $mform->addHelpButton('attemptonlast', 'eachattemptbuildsonthelast', 'quiz');
-        if ($this->get_max_attempts_for_any_override() < 2) {
-            $mform->hideIf('attemptonlast', 'attempts', 'eq', 1);
-        }
 
         // -------------------------------------------------------------------------------
         $mform->addElement('header', 'reviewoptionshdr',
