@@ -166,6 +166,15 @@ final class questionattempt_with_steps_test extends \advanced_testcase {
         $qa->get_max_fraction();
     }
 
+    public function test_get_current_manual_mark(): void {
+        $this->qa->get_step(2)->set_fraction(0.74);
+        $options = new \question_display_options();
+        $options->markdp = 2;
+        $this->assertEquals('1.48', $this->qa->get_current_manual_mark($options));
+        $options->markdp = 0;
+        $this->assertEquals('1', $this->qa->get_current_manual_mark($options));
+    }
+
     /**
      * Test cases for {@see test_validate_manual_mark()}.
      *

@@ -131,7 +131,7 @@ abstract class qbehaviour_renderer extends plugin_renderer_base {
 
         $mark = '';
         if ($qa->get_max_mark()) {
-            $currentmark = $qa->get_current_manual_mark();
+            $currentmark = $qa->get_current_manual_mark($options);
             $maxmark = $qa->get_max_mark();
 
             $fieldsize = strlen($qa->format_max_mark($options->markdp)) - 1;
