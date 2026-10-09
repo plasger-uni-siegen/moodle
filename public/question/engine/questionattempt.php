@@ -729,7 +729,7 @@ class question_attempt {
      * @return string the current manual mark for this question, in the format the teacher typed,
      *     if possible.
      */
-    public function get_current_manual_mark() {
+    public function get_current_manual_mark(question_display_options $options) {
         // Is there a current value in the current POST data? If so, use that.
         $mark = $this->get_submitted_var($this->get_behaviour_field_name('mark'), PARAM_RAW_TRIMMED);
         if ($mark !== null) {
@@ -744,7 +744,7 @@ class question_attempt {
         }
 
         // The max mark for this question has changed so we must re-scale the current mark.
-        return format_float($this->get_mark(), 7, true, true);
+        return format_float($this->get_mark(), $options->markdp, true, true);
     }
 
     /**
